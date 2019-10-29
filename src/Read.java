@@ -5,10 +5,9 @@ import java.util.Scanner;
 
 public class Read {
     public static void main(String[] args) {
-        //TODO: write code to convert to arrayList of words
-        //TODO: Return a string list of derrogatory words in the corpi
         String groupOfWords = readFileAsString("bad-words.txt");
         ArrayList<String> words = makeArrayList(groupOfWords);
+        System.out.println(words);
     }
 
     private static ArrayList<String> makeArrayList(String groupOfWords){
@@ -19,7 +18,9 @@ public class Read {
         while(scanner.hasNextLine()){
             String line = scanner.nextLine();
             output.append(line.trim() + "\n");
-            words.add(line);
+            if(!line.equals("")){
+                words.add(line);
+            }
         }
         return words;
     }
