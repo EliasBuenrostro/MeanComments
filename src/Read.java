@@ -1,16 +1,17 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Read {
     public static void main(String[] args) {
         String groupOfWords = readFileAsString("bad-words.txt");
-        ArrayList<String> words = makeArrayList(groupOfWords);
-        System.out.println(words);
+        String[] words = makeArray(groupOfWords);
+        System.out.println(Arrays.toString(words));
     }
 
-    private static ArrayList<String> makeArrayList(String groupOfWords){
+    private static String[] makeArray(String groupOfWords){
         ArrayList<String> words = new ArrayList<>();
         Scanner scanner;
         StringBuilder output = new StringBuilder();
@@ -22,7 +23,8 @@ public class Read {
                 words.add(line);
             }
         }
-        return words;
+        String[] wordArr = words.toArray(new String[words.size()]);
+        return wordArr;
     }
     private static String readFileAsString(String filename) {
         Scanner scanner;
