@@ -1,4 +1,4 @@
-Test Statements,Racist term used,bad words,racist term ajecent to color,Overall
+Test Statements,Racist term used,bad words,racist term adjacent to color,Overall
 I love cats,0,0,0,0
 I really want to go to paris ,1,0,0,0
 indian people are nice ,1,0,1,0

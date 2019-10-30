@@ -5,12 +5,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Read {
-    public static void main(String[] args) {
-        String groupOfWords = readFileAsString("bad-words.txt");
-        String[] words = makeArray(groupOfWords);
-        System.out.println(Arrays.toString(words));
-    }
-
     private static String[] makeArray(String groupOfWords){
         ArrayList<String> words = new ArrayList<>();
         Scanner scanner;
@@ -32,6 +26,7 @@ public class Read {
 
         try {
             scanner = new Scanner(new FileInputStream(filename), "UTF-8");
+            String x=scanner.nextLine();
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 output.append(line.trim()+"\n");
@@ -44,5 +39,17 @@ public class Read {
         }
 
         return output.toString();
+    }
+
+    public static String[] getBadWords() {
+        String wordsAsString = readFileAsString("bad-words.txt");
+        String[] words = makeArray(wordsAsString);
+        return words;
+    }
+
+    public static String[] getTestSuite() {
+        String statementsAsString = readFileAsString("TestStatements.txt");
+        String[] testsuite=makeArray(statementsAsString);
+        return testsuite;
     }
 }
