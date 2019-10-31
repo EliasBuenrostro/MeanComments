@@ -26,7 +26,7 @@ public class Read {
 
         try {
             scanner = new Scanner(new FileInputStream(filename), "UTF-8");
-            String x=scanner.nextLine();
+            scanner.nextLine();
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 output.append(line.trim()+"\n");
