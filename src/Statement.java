@@ -9,7 +9,7 @@ public class Statement {
     private int indexOfRaceClass;
     private String[] words;
     private String[] derogatoryWords;
-    private String[] raceClassifications={"white","gringo","caucasian","black","negro","african","african american","italian","mafia","latin","indian","muslim","asian","jewish"};
+    private String[] raceClassifications;
     private String[] peopleSynonyms={"people","teen","teens","boys","boy","lady","girl","man","woman","dude","guy"};
     private String raceClass="";
     public boolean isRacist;
@@ -18,6 +18,7 @@ public class Statement {
         this.statement=statement;
         this.count=count;
         derogatoryWords=Read.getBadWords();
+        raceClassifications = Read.getRacialSlur();
     }
 
     public void getRawWords() {

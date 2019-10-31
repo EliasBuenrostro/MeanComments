@@ -52,4 +52,9 @@ public class Read {
         String[] testsuite=makeArray(statementsAsString);
         return testsuite;
     }
+    public static String[] getRacialSlur(){
+        String raceAsString = readFileAsString("RacialSlurs.txt");
+        String[] racialSlurs = makeArray(raceAsString);
+        return racialSlurs;
+    }
 }
